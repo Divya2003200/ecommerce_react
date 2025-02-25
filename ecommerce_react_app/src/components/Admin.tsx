@@ -164,7 +164,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { GlobalContext, Product } from '../components/GloablState';
 import { fetchProducts } from '../api/api';
-import '../styles/Admin.css'; // Import your CSS for styling
+import '../styles/Admin.css';
 
 const AdminPanel: React.FC = () => {
   const context = useContext(GlobalContext);
