@@ -19,8 +19,7 @@ const Login: React.FC = () => {
         try {
             const response = await axios.get('https://fakestoreapi.com/users');
             const users = response.data;
-
-            // Check if the user exists
+ 
             const user = users.find((user: any) => user.username === username && user.password === password);
 
 
@@ -35,12 +34,12 @@ const Login: React.FC = () => {
               }
 
             if (user) {
-                // Set role based on username
+            
                 const userRole = username === 'admin' ? 'admin' : 'user';
                 dispatch({ type: 'LOGIN', payload: { role: userRole, username } });
                 alert(`Logged in as ${userRole}`);
                 
-                // Navigate to the appropriate page based on the role
+          
                 navigate(userRole === 'admin' ? '/admin' : '/home');
             } else {
                 alert('Invalid credentials');
