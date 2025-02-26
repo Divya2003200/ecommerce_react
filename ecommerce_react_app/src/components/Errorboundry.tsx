@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 interface Props {
-  children: React.ReactNode; // Or the specific type of children expected
+  children: React.ReactNode;  
 }
 
 interface State {
@@ -15,18 +15,18 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   static getDerivedStateFromError(error: Error): State {
-    // Update state so the next render will show the fallback UI.
+   
     return { hasError: true };
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
-    // You can log the error to an error reporting service here
+     
     console.error("Error caught by ErrorBoundary:", error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
+   
       return <h1>Something went wrong.</h1>;
     }
 
